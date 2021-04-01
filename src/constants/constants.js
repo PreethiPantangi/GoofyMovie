@@ -7,7 +7,7 @@ export function getGenreListUrl() {
 }
 
 export function getMovieByGenreIdUrl() {
-    return 'http://api.themoviedb.org/3/genre/'
+    return 'https://api.themoviedb.org/3/genre/'
 }
 
 export function getImageUrl() {
