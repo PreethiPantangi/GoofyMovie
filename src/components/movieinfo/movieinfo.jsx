@@ -46,7 +46,9 @@ class MovieInfo extends Component {
                 {/* {movieData.poster_path ? <Image width={'100%'} height={'500px'} imageType={'large'} url={movieData.backdrop_path} /> : null} */}
                 <Row>
                     <Col span={12}>
-                        {movieData.poster_path ? <img src={imageUrl} width="100%" height="60%" alt={imageUrl} ></img> : null}
+                        <div className="left_image">
+                            {movieData.poster_path ? <img src={imageUrl} width="100%" height="100%" alt={imageUrl} ></img> : null}
+                        </div>
                     </Col>
                     <Col span={12}>
                         <div className="movieInfo_details">

@@ -8,3 +8,15 @@
     float: left;
     width: 50%;
 }
+
+.overview_component {
+    height: 25rem;
+    overflow: auto;
+}
+
+@media only screen and (max-width: 780px) {
+    .overview_component {
+        height: 14rem;
+        overflow: auto;
+    }
+}
