@@ -36,11 +36,10 @@ class MovieInfo extends Component {
         imageUrl += movieData.poster_path;
 
         let runtime = movieData.runtime;
-        var hours = Math.floor(runtime / 60 / 60);
-        var minutes = Math.floor(runtime / 60) - (hours * 60);
-        var seconds = runtime % 60;
+        var hours = Math.floor(runtime / 60);
+        var minutes = Math.floor(runtime % 60)
 
-        var formatted = hours + 'hr ' + minutes + 'm ' + seconds + 's';
+        var formatted = hours + 'hr ' + minutes + 'm ';
 
         return (
             <div className="movieInfo_component" >

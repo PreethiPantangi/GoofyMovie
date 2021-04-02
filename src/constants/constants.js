@@ -22,3 +22,23 @@ export function getMovieInfoUrl(movieId) {
 export function getCreditsUrl(movieId) {
     return `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${getApiKey()}`
 }
+
+export function getMovieRecommendationsUrl(movieId) {
+    return `https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=${getApiKey()}`
+}
+
+export function getPopularMoviesUrl() {
+    return `https://api.themoviedb.org/3/movie/popular?api_key=${getApiKey()}`;
+}
+
+export function getTopRatedMoviesUrl() {
+    return `https://api.themoviedb.org/3/movie/top_rated?api_key=${getApiKey()}`
+}
+
+export function getNowPlayingMoviesUrl() {
+    return `https://api.themoviedb.org/3/movie/now_playing?api_key=${getApiKey()}`
+}
+
+export function getUpcomingMoviesUrl() {
+    return `https://api.themoviedb.org/3/movie/upcoming?api_key=${getApiKey()}`
+}
