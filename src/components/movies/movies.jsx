@@ -33,11 +33,11 @@ class Movies extends Component {
                     <h3 className="title">Movies</h3>
                     <div className="movies_list" >
                         {movies.results.map((data) => (
-                            <Link to={`/movie/${data.id}`}>
-                                <div className="movie_info" >
+                            <Link key={data.id} to={`/movie/${data.id}`}>
+                                <div className="movie_info" key={data.id} >
                                     <div className="movieCard" >
                                         <div className="movie_image">
-                                            <Image height={'95%'} width={'100%'} imageType={'small'} url={data.poster_path} />
+                                            <Image height={'400px'} width={'100%'} imageType={'small'} url={data.poster_path} />
                                         </div>
                                         <p>{data.original_title}</p>
                                     </div>

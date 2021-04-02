@@ -1,0 +1,49 @@
+.genre_name {
+    text-align: center;
+}
+
+.genre_name, .title {
+    color: white;
+}
+
+.cast_list {
+    display: flex;
+    justify-content: space-between;
+    width: 100% ;
+    overflow: auto;
+    position: absolute;
+    margin: 2%;
+    width: 90%;
+}
+
+::-webkit-scrollbar {
+    width: 0;  
+    background: transparent;
+  }
+
+.image {
+    margin: 0.5em 0;
+    padding-right: 10px;
+    height: 100px;
+}
+
+
+.cast_info {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.castCard {
+    height: 18rem;
+    width: 15rem;
+    background: rgba(20,20,20,.445);
+    overflow: hidden;
+    border-radius: 3px;
+    margin: 1rem 0;
+    cursor: pointer;
+}
+
+.cast_image {
+    height: 80%;
+    width: 100%;
+}

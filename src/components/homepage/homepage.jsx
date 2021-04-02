@@ -22,9 +22,11 @@ class HomePage extends Component {
                     <h3 className="title" >Genres</h3>
                     <div className="genres_list" >
                         {genre['movie'].map((genre) => (
-                            <Link to={`/genre/${genre.id}`}>
-                                <img className="image" src={genre.poster_path} alt={genre.name} />
-                                {/* <div className="genre_name">{genre.name}</div> */}
+                            <Link key={genre.id} to={`/genre/${genre.id}`}>
+                                <div>
+                                    <img className="image" src={genre.poster_path} alt={genre.name} />
+                                    <div className="genre_name">{genre.name}</div>
+                                </div>
                             </Link>
                         ))}
                     </div>

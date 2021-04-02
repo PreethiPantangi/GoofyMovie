@@ -25,7 +25,9 @@ class Image extends Component {
     render() {
         const { imageUrl } = this.state;
         return (
-            <img src={imageUrl} alt={imageUrl} height={this.props.height} width={this.props.width} className="imageStyle" />
+            <div>
+                {this.props.height && this.props.width ? <img src={imageUrl} alt={imageUrl} height={this.props.height} width={this.props.width} /> : <img src={imageUrl} alt={imageUrl} />}
+            </div>
         );
     }
 }

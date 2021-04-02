@@ -1,0 +1,10 @@
+.genreName {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+}
+
+.left_align, .right_align {
+    float: left;
+    width: 50%;
+}
