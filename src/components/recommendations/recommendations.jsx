@@ -7,10 +7,17 @@ import { Link } from 'react-router-dom'
 
 class Recommendations extends Component {
     state = {
-        recommendations: {}
+        recommendations: {},
+        movieId: ''
     }
 
     componentDidMount() {
+        this.getRecommendations();
+        this.setState({ movieId: this.props.movieId })
+    }
+
+
+    getRecommendations = () => {
         const movieId = this.props.movieId;
         axios.get(getMovieRecommendationsUrl(movieId))
             .then((res) => {

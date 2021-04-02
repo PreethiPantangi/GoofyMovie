@@ -19,7 +19,8 @@
 ::-webkit-scrollbar {
     width: 0;  
     background: transparent;
-  }
+}
+
 
 .image {
     padding-right: 10px;

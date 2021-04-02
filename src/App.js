@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 
 import Movies from './components/movies/movies';
@@ -8,13 +8,13 @@ import HomePage from './components/homepage/homepage';
 
 function App() {
   return (
-    <BrowserRouter >
+    <HashRouter >
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/genre/:genreId/:genreName" component={Movies} />
         <Route exact path="/movie/:movieId" component={MovieInfo} />
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

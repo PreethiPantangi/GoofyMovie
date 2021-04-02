@@ -14,10 +14,14 @@ const { TabPane } = Tabs;
 class MovieInfo extends Component {
     state = {
         movieData: {},
-        credits: {}
     }
 
     componentDidMount() {
+        this.getMovies();
+    }
+
+
+    getMovies = () => {
         axios.get(`${getMovieInfoUrl(this.props.match.params.movieId)}`)
             .then((res) => {
                 this.setState({ movieData: res.data })
@@ -26,6 +30,8 @@ class MovieInfo extends Component {
                 console.log(err);
             });
     }
+
+
 
     render() {
         const { movieData } = this.state;
