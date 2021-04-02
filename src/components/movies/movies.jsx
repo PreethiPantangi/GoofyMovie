@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react';
-import { getMovieByGenreIdUrl, getApiKey } from '../../constants/constants'
+import { Link } from 'react-router-dom';
+import { getMovieByGenreIdUrl } from '../../constants/constants'
 import Image from '../image/image'
 import './movies.css'
 
@@ -13,33 +14,30 @@ class Movies extends Component {
 
     constructor(props) {
         super(props)
-        this.genreId = props.location.state.id
+        this.genreId = props.match.params.genreId
     }
 
     componentDidMount() {
-        axios.get(`${getMovieByGenreIdUrl()}${this.genreId}/movies?api_key=${getApiKey()}`)
+        axios.get(`${getMovieByGenreIdUrl(this.genreId)}`)
             .then(res => {
                 this.setState({ movies: res.data })
             })
     }
 
-    getMovieData = (movieId) => {
-        console.log(movieId)
-    }
-
     render() {
         const { movies } = this.state;
         if (movies.results) {
-            console.log(movies.results)
             return (
                 <div className="genre_movies" >
                     <div className="col-12" >
                         {movies.results.map((data) =>
                             <div key={data.id} className="row" >
-                                <div className="col-2" onClick={() => this.getMovieData(data.id)} >
-                                    <Image url={data.poster_path} />
-                                    <div>{data.original_title}</div>
-                                </div>
+                                <Link to={`/movie/${data.id}`} >
+                                    <div className="col-2" >
+                                        <Image imageType={'small'} url={data.poster_path} />
+                                        <div>{data.original_title}</div>
+                                    </div>
+                                </Link>
                             </div>
                         )}
                     </div>
@@ -47,7 +45,7 @@ class Movies extends Component {
             );
         } else {
             return (
-                <div>Data</div>
+                <div>Loding Data...</div>
             )
         }
     }

@@ -3,13 +3,22 @@ export function getApiKey() {
 }
 
 export function getGenreListUrl() {
-    return 'https://api.themoviedb.org/3/genre/movie/list?api_key='
+    return `https://api.themoviedb.org/3/genre/movie/list?api_key=${getApiKey()}`
 }
 
-export function getMovieByGenreIdUrl() {
-    return 'https://api.themoviedb.org/3/genre/'
+export function getMovieByGenreIdUrl(genreId) {
+    return `https://api.themoviedb.org/3/genre/${genreId}/movies?api_key=${getApiKey()}`
 }
 
-export function getImageUrl() {
-    return 'https://image.tmdb.org/t/p/w500/'
+export function getImageUrl(size) {
+    return `https://image.tmdb.org/t/p/w${size}/`
+}
+
+export function getMovieInfoUrl(movieId) {
+    return `https://api.themoviedb.org/3/movie/${movieId}?api_key=${getApiKey()}&language=en-US`
+}
+
+
+export function getCreditsUrl(movieId) {
+    return `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${getApiKey()}`
 }

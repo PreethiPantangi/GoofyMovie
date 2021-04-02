@@ -1,0 +1,34 @@
+.homepage_container {
+    margin: 2%;
+}
+
+.genre_name {
+    text-align: center;
+}
+
+.genre_name, .title {
+    color: white;
+}
+
+.genres_list {
+    display: flex;
+    justify-content: space-between;
+    width: 100% ;
+    overflow: auto;
+    position: absolute;
+    margin: 2%;
+    width: 90%;
+}
+
+::-webkit-scrollbar {
+    width: 0;  
+    background: transparent;
+  }
+
+img {
+    margin: 0.5em 0;
+    padding-right: 10px;
+    height: 100px;
+    opacity: 0.6;
+    background-color: black;
+}

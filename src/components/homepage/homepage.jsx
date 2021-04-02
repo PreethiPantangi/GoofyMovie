@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { getGenre } from '../../constants/genre_movie_tv'
 import './homepage.css'
-import { Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
 
 class HomePage extends Component {
     state = {
         genre: {},
-        isSelectedGenre: false,
         genreId: 0
     }
 
@@ -14,34 +14,19 @@ class HomePage extends Component {
         this.setState({ genre: getGenre() })
     }
 
-    showMoviesList = (genreId) => {
-        this.setState({ isSelectedGenre: true })
-        this.setState({ genreId })
-    }
-
     render() {
-        const { genre, isSelectedGenre } = this.state;
-        if (isSelectedGenre) {
-            return <Redirect to={{
-                pathname: "/genre",
-                state: { id: this.state.genreId }
-            }}> </Redirect>;
-        }
+        const { genre } = this.state;
         if (genre.movie) {
             return (
-                <div>
-                    <div className="home__wrapper" >
-                        <div className="genres" >
-                            <h2>Genres</h2>
-                            {genre['movie'].map((genre) =>
-                                <div key={genre.id} className="genres__row" onClick={() => this.showMoviesList(genre.id)} >
-                                    <div>
-                                        <img className="image" src={genre.poster_path} alt={genre.name} />
-                                        <p className="genres__name" >{genre.name}</p>
-                                    </div>
-                                </div>
-                            )}
-                        </div>
+                <div className="homepage_container">
+                    <h3 className="title" >Genres</h3>
+                    <div className="genres_list" >
+                        {genre['movie'].map((genre) => (
+                            <Link to={`/genre/${genre.id}`}>
+                                <img className="image" src={genre.poster_path} alt={genre.name} />
+                                <div className="genre_name">{genre.name}</div>
+                            </Link>
+                        ))}
                     </div>
                 </div>
             )

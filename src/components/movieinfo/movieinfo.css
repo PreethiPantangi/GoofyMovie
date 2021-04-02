@@ -1,0 +1,33 @@
+.movieinfo_component {
+    position: relative; 
+}
+
+.movieInfo_left, .movieInfo_right {
+    float: left;
+}
+
+.movieInfo_right {
+    top: 100px;
+    padding-left: 10px;
+}
+
+
+.genreName {
+    float: left;
+}
+
+.movieInfo_data {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.movieInfo_details {
+    padding: 50px;
+    color: white;
+}
