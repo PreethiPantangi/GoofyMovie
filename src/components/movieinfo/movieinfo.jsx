@@ -24,10 +24,8 @@ class MovieInfo extends Component {
     }
 
     render() {
-        console.log('Movies info - ', this.state.movieData);
         const { movieData } = this.state;
         let year = typeof movieData.release_date === 'string' ? movieData.release_date.split("-")[0] : ""
-        console.log(year)
         return (
             <div className="movieInfo_component">
                 {movieData.poster_path ? <Image imageType={'large'} url={movieData.backdrop_path} /> : null}

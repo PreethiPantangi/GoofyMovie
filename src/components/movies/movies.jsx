@@ -5,6 +5,7 @@ import { getMovieByGenreIdUrl } from '../../constants/constants'
 import Image from '../image/image'
 import './movies.css'
 
+
 class Movies extends Component {
     state = {
         movies: {}
@@ -28,18 +29,21 @@ class Movies extends Component {
         const { movies } = this.state;
         if (movies.results) {
             return (
-                <div className="genre_movies" >
-                    <div className="col-12" >
-                        {movies.results.map((data) =>
-                            <div key={data.id} className="row" >
-                                <Link to={`/movie/${data.id}`} >
-                                    <div className="col-2" >
-                                        <Image imageType={'small'} url={data.poster_path} />
-                                        <div>{data.original_title}</div>
+                <div className="movies_container">
+                    <h3 className="title">Movies</h3>
+                    <div className="movies_list" >
+                        {movies.results.map((data) => (
+                            <Link to={`/movie/${data.id}`}>
+                                <div className="movie_info" >
+                                    <div className="movieCard" >
+                                        <div className="movie_image">
+                                            <Image height={'95%'} width={'100%'} imageType={'small'} url={data.poster_path} />
+                                        </div>
+                                        <p>{data.original_title}</p>
                                     </div>
-                                </Link>
-                            </div>
-                        )}
+                                </div>
+                            </Link>
+                        ))}
                     </div>
                 </div>
             );

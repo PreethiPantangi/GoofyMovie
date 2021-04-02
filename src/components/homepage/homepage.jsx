@@ -24,7 +24,7 @@ class HomePage extends Component {
                         {genre['movie'].map((genre) => (
                             <Link to={`/genre/${genre.id}`}>
                                 <img className="image" src={genre.poster_path} alt={genre.name} />
-                                <div className="genre_name">{genre.name}</div>
+                                {/* <div className="genre_name">{genre.name}</div> */}
                             </Link>
                         ))}
                     </div>
