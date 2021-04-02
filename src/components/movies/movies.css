@@ -37,7 +37,7 @@ a {
 }
 
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 780px) {
     .movieCard {
         height: 13rem;
         width: 6rem;
