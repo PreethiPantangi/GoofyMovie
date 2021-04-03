@@ -23,9 +23,6 @@ class MovieInfo extends Component {
         credits: {}
     }
 
-    constructor(props) {
-        super(props)
-    }
 
     componentDidMount() {
         this.getMovies();
