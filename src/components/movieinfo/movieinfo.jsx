@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { Component } from 'react';
-import { getMovieInfoUrl, getImageUrl } from '../../constants/constants'
+import { getMovieInfoUrl, getImageUrl, getMovieRecommendationsUrl } from '../../constants/constants'
 import './movieinfo.css'
 import { Row, Col } from 'antd';
 import { StarFilled } from '@ant-design/icons';
@@ -8,16 +8,31 @@ import { Tabs } from 'antd';
 import Overview from '../overview/overview'
 import Cast from '../cast/cast'
 import Recommendations from '../recommendations/recommendations'
+import { Link } from 'react-router-dom'
 
 const { TabPane } = Tabs;
 
 class MovieInfo extends Component {
     state = {
         movieData: {},
+        movieId: '',
+        isGotRecommendation: false,
+        recommendationID: 0,
+        defaultTabKey: 1,
+        recommendations: {}
     }
 
     componentDidMount() {
         this.getMovies();
+        this.setState({ movieId: this.props.match.params.movieId })
+    }
+
+    componentDidUpdate() {
+        if (this.state.isGotRecommendation && this.state.recommendationID !== this.state.movieId) {
+            this.getMovies();
+            this.setState({ isGotRecommendation: false });
+            this.setState({ defaultTabKey: 1 })
+        }
     }
 
 
@@ -25,6 +40,10 @@ class MovieInfo extends Component {
         axios.get(`${getMovieInfoUrl(this.props.match.params.movieId)}`)
             .then((res) => {
                 this.setState({ movieData: res.data })
+                axios.get(getMovieRecommendationsUrl(this.props.match.params.movieId))
+                    .then((res) => {
+                        this.setState({ recommendations: res.data })
+                    })
             })
             .catch((err) => {
                 console.log(err);
@@ -32,6 +51,13 @@ class MovieInfo extends Component {
     }
 
 
+    handleCallback = (childData) => {
+        this.setState({ isGotRecommendation: true })
+        this.setState({ recommendationID: childData })
+        // if (childData !== this.state.movieId) {
+        //     this.setState({ movieId: childData })
+        // }
+    }
 
     render() {
         const { movieData } = this.state;
@@ -46,6 +72,12 @@ class MovieInfo extends Component {
         var minutes = Math.floor(runtime % 60)
 
         var formatted = hours + 'hr ' + minutes + 'm ';
+
+        if (this.state.isChangeDetected) {
+            return (
+                <Link to={`/movie/${this.props.match.params.movieId}`} />
+            )
+        }
 
         return (
             <div className="movieInfo_component" >
@@ -74,7 +106,7 @@ class MovieInfo extends Component {
                                 </Col>
                             </Row>
                             <Row>
-                                <Tabs defaultActiveKey="1">
+                                <Tabs activeKey={this.state.activeKey} defaultActiveKey={this.state.defaultTabKey}>
                                     <TabPane tab="Overview" key="1" className="textColor">
                                         <Overview movieData={this.state.movieData} />
                                     </TabPane>
@@ -82,7 +114,7 @@ class MovieInfo extends Component {
                                         <Cast movieId={movieData.id} />
                                     </TabPane>
                                     <TabPane tab="More Like This" key="3">
-                                        <Recommendations movieId={movieData.id} />
+                                        <Recommendations data={this.state.recommendations} movieId={movieData.id} parentCallback={this.handleCallback} />
                                     </TabPane>
                                 </Tabs>
                             </Row>

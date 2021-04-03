@@ -10,7 +10,6 @@ class Carousel extends Component {
         const name = this.props.name;
         const data = this.props.data;
         const path = this.props.path;
-        console.log(data);
         if (data) {
             return (
                 <div className="carousel_component">
@@ -29,19 +28,6 @@ class Carousel extends Component {
                         ))}
                     </div>
                 </div>
-                // <div className="homepage_container">
-                //     <h3 className="title" >{name}</h3>
-                //     <div className="genres_list" >
-                //         {data.map((d) => (
-                //             <Link key={d.id} to={path === 'genre' ? `/genre/${d.id}/${d.name}` : `/movie/${d.id}`} >
-                //                 <div className="genre_details" >
-                //                     <Image height={'300px'} width={'100%'} imageType={'small'} url={d.poster_path} />
-                //                     <p>{d.name}</p>
-                //                 </div>
-                //             </Link>
-                //         ))}
-                //     </div>
-                // </div>
             );
         } else {
             return (<div>Loading Data....</div>)
