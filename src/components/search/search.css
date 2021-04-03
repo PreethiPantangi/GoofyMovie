@@ -8,3 +8,16 @@
     text-align: start;
     vertical-align: top;
 }
+
+@media only screen and (max-width: 780px) {
+    .search_box {
+        text-align: right;
+    }
+    
+    .ant-input-group-wrapper {
+        display: inline-block;
+        width: 30rem !important;
+        text-align: start;
+        vertical-align: top;
+    }
+}
