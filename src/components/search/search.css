@@ -9,9 +9,10 @@
     vertical-align: top;
 }
 
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 600px) {
     .search_box {
         text-align: right;
+        /* width: 50%; */
     }
     
     .ant-input-group-wrapper {

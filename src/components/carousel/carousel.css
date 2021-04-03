@@ -47,3 +47,14 @@
     height: 80%;
     width: 100%;
 }
+
+@media only screen and (max-width: 780px) {
+    .carousel_list {
+        display: flex;
+        justify-content: space-between;
+        width: 100% ;
+        overflow: auto;
+        position: absolute;
+        margin: 2%;
+    }
+}
