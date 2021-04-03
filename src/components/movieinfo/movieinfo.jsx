@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { Component } from 'react';
-import { getMovieInfoUrl, getImageUrl, getMovieRecommendationsUrl } from '../../constants/constants'
+import { getMovieInfoUrl, getImageUrl, getCreditsUrl, getMovieRecommendationsUrl } from '../../constants/constants'
 import './movieinfo.css'
 import { Row, Col } from 'antd';
 import { StarFilled } from '@ant-design/icons';
@@ -19,7 +19,12 @@ class MovieInfo extends Component {
         isGotRecommendation: false,
         recommendationID: 0,
         defaultTabKey: 1,
-        recommendations: {}
+        recommendations: {},
+        credits: {}
+    }
+
+    constructor(props) {
+        super(props)
     }
 
     componentDidMount() {
@@ -43,6 +48,10 @@ class MovieInfo extends Component {
                 axios.get(getMovieRecommendationsUrl(this.props.match.params.movieId))
                     .then((res) => {
                         this.setState({ recommendations: res.data })
+                    })
+                axios.get(`${getCreditsUrl(this.props.match.params.movieId)}`)
+                    .then((res) => {
+                        this.setState({ credits: res.data })
                     })
             })
             .catch((err) => {
@@ -111,7 +120,7 @@ class MovieInfo extends Component {
                                         <Overview movieData={this.state.movieData} />
                                     </TabPane>
                                     <TabPane tab="Cast" key="2">
-                                        <Cast movieId={movieData.id} />
+                                        <Cast data={this.state.credits} movieId={movieData.id} />
                                     </TabPane>
                                     <TabPane tab="More Like This" key="3">
                                         <Recommendations data={this.state.recommendations} movieId={movieData.id} parentCallback={this.handleCallback} />

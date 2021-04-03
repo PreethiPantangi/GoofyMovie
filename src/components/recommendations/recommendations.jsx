@@ -31,7 +31,6 @@ function Recommendations(props) {
                 </div>
             </div>
         );
-
     } else {
         return (<div>Loading data....</div>)
     }

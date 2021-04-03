@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { Component } from 'react';
-import { getCreditsUrl } from '../../constants/constants'
 import './cast.css'
 import Image from '../image/image'
 
@@ -9,20 +8,12 @@ class Cast extends Component {
         credits: {}
     }
 
-    componentDidMount() {
-        const movieId = this.props.movieId;
-        axios.get(`${getCreditsUrl(movieId)}`)
-            .then((res) => {
-                this.setState({ credits: res.data })
-            })
-    }
-
     render() {
-        const { credits } = this.state;
-        if (credits.cast) {
+        const { data } = this.props;
+        if (data.cast) {
             return (
                 <div className="cast_list" >
-                    {credits['cast'].map((cast) => (
+                    {data['cast'].map((cast) => (
                         <div className="cast_info" key={cast.id} >
                             <div className="castCard" >
                                 <div className="cast_image">
