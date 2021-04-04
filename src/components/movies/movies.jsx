@@ -42,7 +42,7 @@ class Movies extends Component {
                                         <div className="movie_image">
                                             <Image height={'300px'} width={'100%'} imageType={'small'} url={data.poster_path} />
                                         </div>
-                                        <p>{data.original_title}</p>
+                                        <p className="movie_title" >{data.original_title}</p>
                                     </div>
                                 </div>
                             </Link>

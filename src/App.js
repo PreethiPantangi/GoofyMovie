@@ -2,9 +2,9 @@ import { HashRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 
 import Movies from './components/movies/movies';
-import MovieInfo from './components/movieinfo/movieinfo'
 import 'antd/dist/antd.css';
 import HomePage from './components/homepage/homepage';
+import MovieInfo from './components/movieinfo/movieinfo';
 
 function App() {
   return (

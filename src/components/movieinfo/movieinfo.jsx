@@ -70,7 +70,7 @@ class MovieInfo extends Component {
 
         let year = typeof movieData.release_date === 'string' ? movieData.release_date.split("-")[0] : ""
 
-        let imageUrl = getImageUrl('500')
+        let imageUrl = getImageUrl('1280')
         imageUrl += movieData.poster_path;
 
         let runtime = movieData.runtime;
@@ -87,20 +87,21 @@ class MovieInfo extends Component {
 
         return (
             <div className="movieInfo_component" >
-                {/* {movieData.poster_path ? <Image width={'100%'} height={'500px'} imageType={'large'} url={movieData.backdrop_path} /> : null} */}
-                <Row>
-                    <Col span={12}>
-                        <div className="left_image">
-                            {movieData.poster_path ? <img src={imageUrl} width="100%" height="100%" alt={imageUrl} ></img> : null}
+                <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+                    <Col className="gutter-row" span={12}>
+                        <div className="movieInfo_poster">
+                            <img src={imageUrl} alt={imageUrl} ></img>
                         </div>
                     </Col>
-                    <Col span={12}>
-                        <div className="movieInfo_details">
+                    <Col className="gutter-row" span={12}>
+                        <div className="movieInfo_content">
                             <Row>
-                                <Col span={12}><h3 className="textColor">{movieData.original_title}</h3></Col>
+                                <Col span={24}><h3 className="textColor">{movieData.original_title}</h3></Col>
                             </Row>
                             <Row>
-                                <h6 className="textColor textStyle">{movieData.tagline}</h6>
+                                <Col span={24} >
+                                    <h6 className="textColor textStyle">{movieData.tagline}</h6>
+                                </Col>
                             </Row>
                             <Row>
                                 <Col span={8}><p className="textColor">{year}</p></Col>
@@ -112,17 +113,19 @@ class MovieInfo extends Component {
                                 </Col>
                             </Row>
                             <Row>
-                                <Tabs activeKey={this.state.activeKey} defaultActiveKey={this.state.defaultTabKey}>
-                                    <TabPane tab="Overview" key="1" className="textColor">
-                                        <Overview movieData={this.state.movieData} />
-                                    </TabPane>
-                                    <TabPane tab="Cast" key="2">
-                                        <Cast data={this.state.credits} movieId={movieData.id} />
-                                    </TabPane>
-                                    <TabPane tab="More Like This" key="3">
-                                        <Recommendations data={this.state.recommendations} movieId={movieData.id} parentCallback={this.handleCallback} />
-                                    </TabPane>
-                                </Tabs>
+                                <Col span={24} >
+                                    <Tabs activeKey={this.state.activeKey} defaultActiveKey={this.state.defaultTabKey}>
+                                        <TabPane tab="Overview" key="1" className="textColor">
+                                            <Overview movieData={this.state.movieData} />
+                                        </TabPane>
+                                        <TabPane tab="Cast" key="2">
+                                            <Cast data={this.state.credits} movieId={movieData.id} />
+                                        </TabPane>
+                                        <TabPane tab="More Like This" key="3">
+                                            <Recommendations data={this.state.recommendations} movieId={movieData.id} parentCallback={this.handleCallback} />
+                                        </TabPane>
+                                    </Tabs>
+                                </Col>
                             </Row>
                         </div>
                     </Col>

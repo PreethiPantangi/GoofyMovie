@@ -16,6 +16,7 @@ class Image extends Component {
             this.setState({ imageType: this.props.imageType })
         } else {
             let imageUrl = getImageUrl('500');
+            console.log(this.props.url);
             imageUrl += this.props.url;
             this.setState({ imageUrl })
             this.setState({ imageType: this.props.imageType })
@@ -24,6 +25,7 @@ class Image extends Component {
 
     render() {
         const { imageUrl } = this.state;
+        console.log(imageUrl);
         return (
             <div>
                 {this.props.height && this.props.width ? <img src={imageUrl} alt={imageUrl} height={this.props.height} width={this.props.width} /> : <img src={imageUrl} alt={imageUrl} />}

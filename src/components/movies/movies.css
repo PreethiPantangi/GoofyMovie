@@ -26,7 +26,7 @@
 }
 
 .movie_image {
-    height: 80%;
+    height: 85%;
     width: 100%;
 }
 
@@ -34,4 +34,8 @@
 a {
     display: contents;
     text-decoration: none;
+}
+
+img {
+    object-fit: cover !important;
 }
