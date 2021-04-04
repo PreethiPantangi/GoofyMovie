@@ -35,17 +35,3 @@ a {
     display: contents;
     text-decoration: none;
 }
-
-
-@media only screen and (max-width: 780px) {
-    .movieCard {
-        height: 13rem;
-        width: 6rem;
-        background: rgba(20,20,20,.445);
-        overflow: hidden;
-        border-radius: 3px;
-        margin: 1rem 0;
-        cursor: pointer;
-        color: white;
-    }    
-}
