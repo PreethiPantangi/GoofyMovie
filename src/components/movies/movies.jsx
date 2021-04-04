@@ -2,8 +2,11 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { getMovieByGenreIdUrl } from '../../constants/constants'
+import BackButton from '../BackButton/BackButton';
 import Image from '../image/image'
+import Loader from '../loader/loader';
 import './movies.css'
+
 
 
 class Movies extends Component {
@@ -33,6 +36,7 @@ class Movies extends Component {
         if (movies.results) {
             return (
                 <div className="movies_container">
+                    <BackButton />
                     <h3 className="title">{genreName}</h3>
                     <div className="movies_list" >
                         {movies.results.map((data) => (
@@ -52,7 +56,7 @@ class Movies extends Component {
             );
         } else {
             return (
-                <div>Loding Data...</div>
+                <Loader />
             )
         }
     }

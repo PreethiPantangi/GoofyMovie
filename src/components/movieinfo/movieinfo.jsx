@@ -9,6 +9,7 @@ import Overview from '../overview/overview'
 import Cast from '../cast/cast'
 import Recommendations from '../recommendations/recommendations'
 import { Link } from 'react-router-dom'
+import BackButton from '../BackButton/BackButton'
 
 const { TabPane } = Tabs;
 
@@ -34,7 +35,11 @@ class MovieInfo extends Component {
             this.getMovies();
             this.setState({ isGotRecommendation: false });
             this.setState({ defaultTabKey: 1 })
+            this.props.history.push(`/movie/${this.state.recommendationID}`)
         }
+        // if (this.props.match.params.movieId !== this.state.recommendationID) {
+        //     this.getMovies()
+        // }
     }
 
 
@@ -88,6 +93,9 @@ class MovieInfo extends Component {
         return (
             <div className="movieInfo_component" >
                 <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+                    <Col span={24}>
+                        <BackButton />
+                    </Col>
                     <Col className="gutter-row" span={12}>
                         <div className="movieInfo_poster">
                             <img className="poster" src={imageUrl} alt={imageUrl} ></img>
@@ -108,7 +116,7 @@ class MovieInfo extends Component {
                                 <Col span={8}><p className="textColor">{formatted}</p></Col>
                                 <Col span={8}>
                                     <div className="icons-list">
-                                        <p className="textColor">{movieData.vote_average}<StarFilled /></p>
+                                        <p className="textColor">{movieData.vote_average}<StarFilled style={{ color: 'yellow' }} /></p>
                                     </div>
                                 </Col>
                             </Row>

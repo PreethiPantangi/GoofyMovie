@@ -15,7 +15,6 @@ class Genre extends Component {
 
     render() {
         const { genre } = this.state;
-
         return (
             <div>
                 {genre.movie ? <div>

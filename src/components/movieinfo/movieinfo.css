@@ -50,6 +50,10 @@ p {
 }
 } */
 
+.movieInfo_component {
+    padding: 2%;
+}
+
 .textColor {
     color: white;
 }
@@ -58,9 +62,9 @@ p {
     font-style: italic;
 }
 
-.anticon {
+/* .anticon {
     color: yellow !important;
-}
+} */
 
 .ant-tabs-tab {
     color: white !important;

@@ -1,10 +1,8 @@
-.ant-input-group-wrapper {
-    width: 50% !important;
+.app_name {
+    cursor: pointer;
     float: right;
 }
 
-@media only screen and (max-width: 600px) {
-    .ant-input-group-wrapper {
-        width: 100% !important;
-    }
+.search {
+    text-align: center;
 }

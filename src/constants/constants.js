@@ -42,3 +42,7 @@ export function getNowPlayingMoviesUrl() {
 export function getUpcomingMoviesUrl() {
     return `https://api.themoviedb.org/3/movie/upcoming?api_key=${getApiKey()}`
 }
+
+export function getMoviesByQuery(query) {
+    return `https://api.themoviedb.org/3/search/movie?api_key=${getApiKey()}&query=${query}`
+}
