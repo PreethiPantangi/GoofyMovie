@@ -3,7 +3,7 @@ import { Input, Button, Row, Col } from 'antd';
 import './search.css'
 import { SearchOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom'
-
+import logo from '../../logo2.png'
 
 function SearchResults() {
 
@@ -15,12 +15,12 @@ function SearchResults() {
 
     return (
         <div>
-            <div className="search_box">
+            <div className="search_component">
                 <Row>
-                    <Col span={8} >
+                    <Col span={8} className="box">
                         <Input placeholder="Search for a movie..." onChange={onSearch} />
                     </Col>
-                    <Col span={8} >
+                    <Col span={8} className="box">
                         <Link to={`/search?query=${search}`} >
                             <Button className="search_button" type="primary" icon={<SearchOutlined />}>
                                 Search
@@ -28,7 +28,8 @@ function SearchResults() {
                         </Link>
                     </Col>
                     <Col span={8} >
-                        <h4 className="textColor app_name">Goofy Movies</h4>
+                        <img className="logo box" src={logo} alt="Goofy Movies" />
+                        {/* <h4 className="textColor app_name">Goofy Movies</h4> */}
                     </Col>
                 </Row>
                 {/* <Search placeholder="Search for a movie or show" onSearch={onSearch} enterButton="Search" /> */}

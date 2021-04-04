@@ -6,3 +6,27 @@
 .search {
     text-align: center;
 }
+
+.logo {
+    height: 50%;
+    width: 36%;
+    float: right;
+}
+
+.box {
+    padding-top: 20px;
+}
+
+
+@media only screen and (max-width: 600px) {
+.logo {
+    height: 100%;
+    width: 70%;
+    float: right;
+    padding-top: 0px;
+}
+
+/* .box {
+    padding-top: 20px;
+} */
+}
