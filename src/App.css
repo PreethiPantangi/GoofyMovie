@@ -40,6 +40,6 @@ body
 } */
 
 
-body {
-  background-color: black !important;
+.textColor {
+  color: white;
 }

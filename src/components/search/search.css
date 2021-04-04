@@ -1,24 +1,10 @@
-.search_box {
-    text-align: right;
-}
-
 .ant-input-group-wrapper {
-    display: inline-block;
-    width: 30rem !important;
-    text-align: start;
-    vertical-align: top;
+    width: 50% !important;
+    float: right;
 }
 
 @media only screen and (max-width: 600px) {
-    .search_box {
-        text-align: right;
-        /* width: 50%; */
-    }
-    
     .ant-input-group-wrapper {
-        display: inline-block;
-        width: 30rem !important;
-        text-align: start;
-        vertical-align: top;
+        width: 100% !important;
     }
 }

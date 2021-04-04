@@ -13,7 +13,7 @@
     overflow: auto;
     position: absolute;
     margin: 2%;
-    width: 90%;
+    width: 95%;
 }
 
 ::-webkit-scrollbar {
@@ -34,7 +34,7 @@
 }
 
 .carouselCard {
-    height: 18rem;
+    height: 14rem;
     width: 15rem;
     background: rgba(20,20,20,.445);
     overflow: hidden;
@@ -46,9 +46,10 @@
 .carousel_image {
     height: 80%;
     width: 100%;
+    padding: 10px;
 }
 
-@media only screen and (max-width: 780px) {
+/* @media only screen and (max-width: 780px) {
     .carousel_list {
         display: flex;
         justify-content: space-between;
@@ -57,4 +58,4 @@
         position: absolute;
         margin: 2%;
     }
-}
+} */

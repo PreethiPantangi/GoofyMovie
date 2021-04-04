@@ -2,16 +2,16 @@
     margin: 2%;
 }
 
-.homepage_component_fixed_height_search {
+.homepage_component_search {
+    float: right;
     height: 100px;
-    text-align: center;
-    padding-top: 10px;
-}
-
-.homepage_component_fixed_height {
-    height: 500px;
+    padding: 10px;
 }
 
 .homepage_component_fixed_height_genre {
     height: 300px;
+}
+
+.homepage_component_fixed_height {
+    height: 400px;
 }

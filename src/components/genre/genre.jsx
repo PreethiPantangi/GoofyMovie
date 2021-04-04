@@ -18,7 +18,7 @@ class Genre extends Component {
 
         return (
             <div>
-                {genre.movie ? <div className="homepage_container">
+                {genre.movie ? <div>
                     <h3 className="title" >Genres</h3>
                     <div className="genres_list" >
                         {genre['movie'].map((genre) => (
