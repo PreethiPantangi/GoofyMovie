@@ -118,10 +118,10 @@ class MovieInfo extends Component {
                                         <TabPane tab="Overview" key="1" className="textColor">
                                             <Overview movieData={this.state.movieData} />
                                         </TabPane>
-                                        <TabPane tab="Cast" key="2">
+                                        <TabPane tab="Cast" key="2" className="textColor">
                                             <Cast data={this.state.credits} movieId={movieData.id} />
                                         </TabPane>
-                                        <TabPane tab="More Like This" key="3">
+                                        <TabPane tab="More Like This" key="3" className="textColor">
                                             <Recommendations data={this.state.recommendations} movieId={movieData.id} parentCallback={this.handleCallback} />
                                         </TabPane>
                                     </Tabs>

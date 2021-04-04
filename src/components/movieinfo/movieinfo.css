@@ -50,6 +50,14 @@ p {
 }
 } */
 
+.textColor {
+    color: white;
+}
+
+.textStyle {
+    font-style: italic;
+}
+
 .anticon {
     color: yellow !important;
 }

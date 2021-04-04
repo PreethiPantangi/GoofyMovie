@@ -9,19 +9,22 @@ class Cast extends Component {
 
     render() {
         const { data } = this.props;
-        if (data.cast) {
+        console.log(data['cast']);
+        if (data['cast']) {
             return (
-                <div className="cast_list" >
-                    {data['cast'].map((cast) => (
-                        <div className="cast_info" key={cast.id} >
-                            <div className="castCard" >
-                                <div className="cast_image">
-                                    <Image height={'10%'} width={'60%'} imageType={'small'} url={cast.profile_path} />
+                <div>
+                    <div className="cast_list textColor" >
+                        {data['cast'].map((cast) => (
+                            <div className="cast_info" key={cast.id} >
+                                <div className="castCard" >
+                                    <div className="cast_image">
+                                        <Image height={'10%'} width={'60%'} imageType={'small'} url={cast.profile_path} />
+                                    </div>
+                                    <p className="textColor">{cast.original_name}</p>
                                 </div>
-                                <p className="textColor" style={{ textAlign: "center" }}>{cast.original_name}</p>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             )
         } else {

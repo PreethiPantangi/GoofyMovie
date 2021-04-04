@@ -1,5 +1,5 @@
 .genre_name {
-    text-align: center;
+    /* text-align: center; */
 }
 
 .genre_name, .title {
@@ -9,9 +9,9 @@
 .cast_list {
     display: flex;
     justify-content: space-between;
-    width: 100% ;
+    /* width: 100% ; */
     overflow: auto;
-    position: absolute;
+    /* position: absolute; */
     margin: 2%;
     width: 90%;
 }
