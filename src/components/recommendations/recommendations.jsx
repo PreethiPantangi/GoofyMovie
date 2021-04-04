@@ -15,20 +15,26 @@ function Recommendations(props) {
 
     if (recommendations.results) {
         return (
-            <div className="recommendations_component">
-                <div className="recommendations_list" >
-                    {recommendations['results'].map((recommendation) => (
-                        <div className="recommendations_info" key={recommendation.id} >
-                            <div className="recommendationsCard" >
-                                <div className="recommendations_image" onClick={e => onTrigger(e, recommendation.id)}>
-                                    <Link to={`${recommendation.id}`} >
-                                        <Image height={'10%'} width={'60%'} imageType={'small'} url={recommendation.poster_path} />
-                                    </Link>
+            <div>
+                {recommendations.results.length ? <div className="recommendations_component">
+                    <div className="recommendations_list" >
+                        {recommendations['results'].map((recommendation) => (
+                            <div className="recommendations_info" key={recommendation.id} >
+                                <div className="recommendationsCard" >
+                                    <div className="recommendations_image" onClick={e => onTrigger(e, recommendation.id)}>
+                                        <Link to={`${recommendation.id}`} >
+                                            <Image height={'10%'} width={'60%'} imageType={'small'} url={recommendation.poster_path} />
+                                        </Link>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
-                </div>
+                        ))}
+                    </div>
+                </div> :
+                    <div className="no_recommendations" >
+                        <h6 className="textColor">No recommendations</h6>
+                    </div>
+                }
             </div>
         );
     } else {
