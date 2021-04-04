@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './cast.css'
 import Image from '../image/image'
+import Male from '../../male.png'
+import Female from '../../female.jpg'
 
 class Cast extends Component {
     state = {
@@ -18,7 +20,15 @@ class Cast extends Component {
                             <div className="cast_info" key={cast.id} >
                                 <div className="castCard" >
                                     <div className="cast_image">
-                                        <Image height={'10%'} width={'60%'} imageType={'small'} url={cast.profile_path} />
+                                        {/* gender 2 -male ; gender 1 - female */}
+                                        {cast.profile_path !== null ?
+                                            <Image height={'10%'} width={'60%'} imageType={'small'} url={cast.profile_path} /> :
+                                            <div>
+                                                {cast.gender === 2 ?
+                                                    <img height={'10%'} width={'60%'} src={Male} /> :
+                                                    <img height={'10%'} width={'60%'} src={Female} />}
+                                            </div>
+                                        }
                                     </div>
                                     <p className="textColor">{cast.original_name}</p>
                                 </div>
