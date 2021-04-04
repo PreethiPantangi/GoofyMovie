@@ -25,7 +25,7 @@ class Genre extends Component {
                             // <Link key={genre.id} to={`/genre/${genre.id}`} params={{ genre: genre.name }}>
                             <Link key={genre.id} to={`/genre/${genre.id}/${genre.name}`} >
                                 <div className="genre_details" >
-                                    <img className="image" style={{ width: 180, height: 130 }} src={genre.poster_path} alt={genre.name} />
+                                    <img className="image" style={{ width: 200, height: 130 }} src={genre.poster_path} alt={genre.name} />
                                     <div className="genre_name">{genre.name}</div>
                                 </div>
                             </Link>

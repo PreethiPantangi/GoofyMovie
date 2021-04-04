@@ -90,7 +90,7 @@ class MovieInfo extends Component {
                 <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
                     <Col className="gutter-row" span={12}>
                         <div className="movieInfo_poster">
-                            <img src={imageUrl} alt={imageUrl} ></img>
+                            <img className="poster" src={imageUrl} alt={imageUrl} ></img>
                         </div>
                     </Col>
                     <Col className="gutter-row" span={12}>
