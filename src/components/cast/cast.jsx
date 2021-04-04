@@ -25,8 +25,8 @@ class Cast extends Component {
                                             <Image height={'10%'} width={'60%'} imageType={'small'} url={cast.profile_path} /> :
                                             <div>
                                                 {cast.gender === 2 ?
-                                                    <img height={'10%'} width={'60%'} src={Male} /> :
-                                                    <img height={'10%'} width={'60%'} src={Female} />}
+                                                    <img height={'10%'} width={'60%'} src={Male} alt={cast.original_name} /> :
+                                                    <img height={'10%'} width={'60%'} src={Female} alt={cast.original_name} />}
                                             </div>
                                         }
                                     </div>
