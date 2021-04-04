@@ -15,7 +15,7 @@
 }
 
 .movieCard {
-    height: 24rem;
+    height: 33rem;
     width: 18rem;
     background: rgba(20,20,20,.445);
     overflow: hidden;
@@ -38,4 +38,26 @@ a {
 
 img {
     object-fit: cover !important;
+    height: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .movie_image {
+        height: 85%;
+        width: 100%;
+    }
+    img {
+        object-fit: cover !important;
+        height: 100%;
+    }
+    .movieCard {
+        height: 35rem;
+        width: 18rem;
+        background: rgba(20,20,20,.445);
+        overflow: hidden;
+        border-radius: 3px;
+        margin: 1rem 0;
+        cursor: pointer;
+        color: white;
+    }
 }

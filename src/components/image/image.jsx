@@ -16,7 +16,6 @@ class Image extends Component {
             this.setState({ imageType: this.props.imageType })
         } else {
             let imageUrl = getImageUrl('500');
-            console.log(this.props.url);
             imageUrl += this.props.url;
             this.setState({ imageUrl })
             this.setState({ imageType: this.props.imageType })

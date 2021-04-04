@@ -96,7 +96,21 @@ p {
 
 @media only screen and (max-width: 600px) {
     .movieInfo_poster {
-        height: 100vh;
+        height: 40vh;
+        display: flex;
+        padding: 10px;
         justify-content: center;
+    }
+    
+    .movieInfo_content {
+        overflow: auto;
+    }
+    
+    
+    .poster {
+        max-width: 100%;
+        max-height: 100%;
+        display: block;
+        object-fit: fill;
     }
 }
